@@ -47,8 +47,8 @@ WORKDIR /usr/local/src/carbon
 RUN python ./setup.py install
 
 # install statsd
-#RUN git clone -b v0.7.2 https://github.com/etsy/statsd.git /opt/statsd
-#ADD conf/statsd/config.js /opt/statsd/config.js
+RUN git clone -b v0.7.2 https://github.com/etsy/statsd.git /opt/statsd
+ADD conf/statsd/config.js /opt/statsd/config.js
 
 # config nginx
 RUN rm /etc/nginx/sites-enabled/default
@@ -69,7 +69,7 @@ ADD conf/logrotate /etc/logrotate.d/graphite
 ADD daemons/carbon.sh /etc/service/carbon/run
 ADD daemons/carbon-aggregator.sh /etc/service/carbon-aggregator/run
 ADD daemons/graphite.sh /etc/service/graphite/run
-# ADD daemons/statsd.sh /etc/service/statsd/run
+ADD daemons/statsd.sh /etc/service/statsd/run
 ADD daemons/nginx.sh /etc/service/nginx/run
 
 # cleanup
