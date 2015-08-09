@@ -78,6 +78,8 @@ RUN apt-get clean\
 
 # defaults
 
+EXPOSE 2003 2003 80 8025
+
 VOLUME ["/opt/graphite", "/etc/nginx", "/etc/logrotate.d", "/var/log"]
 ENV HOME /root
 CMD ["/sbin/my_init"]
