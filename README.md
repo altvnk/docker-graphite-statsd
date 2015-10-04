@@ -1,6 +1,6 @@
 # Docker Image for Graphite
 
-## Get Graphite running instantly to use with sitespeed.io
+## Graphite + Statsd
 
 This is a fork from [Sitespeedio](https://github.com/sitespeedio/docker-graphite-statsd)
 
@@ -55,11 +55,3 @@ sudo docker run -d \
   -v /path/to/storage-schemas.conf:/opt/graphite/conf/storage-schemas.conf \
   altvnk/graphite
 ```
-
-
-### Base Image
-
-Built using [Phusion's base image](https://github.com/phusion/baseimage-docker).
-
-* All Graphite related processes are run as daemons & monitored with [runit](http://smarden.org/runit/).
-* Includes additional services such as logrotate.
